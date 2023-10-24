@@ -1,1 +1,133 @@
-DOCTYPE! html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fitness Tracking App</title>
+        <style>
+            * {
+                box-sizing: border-box;
+                }
+                /* Establishes font and format alteration */
+                .bold {
+                    font-weight: 700;
+                }
+                .center {
+                    text-align: center;
+                }
+                td image {
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                .logo{
+                    width:100px;
+                    height:100px
+                }
+                table, th, td {
+                    border: 1px solid black; margin-left:auto; margin-right:auto;
+                    width: 100px;
+                    height: 50px;
+                }
+                body {
+                    background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.KnYXh3FcpxeIqtGiirBXrAHaEo%26pid%3DApi&f=1&ipt=6b2f6291cb84ffd6f44a45e579169b66079fd2b5d6e319d4c5ba0625751ccee0&ipo=images');
+                    background-repeat: no-repeat;
+                    background-attachment: fixed;
+                    background-size: cover;
+                }
+                /* Wbsite layout */
+                .header {
+                    background-color: #F1F1F1;
+                    text-align: center;
+                    padding: 20px;
+                }
+                .threecolumn {
+                    float: left;
+                    width: 33.333%;
+                    padding: 10px;
+                }
+                /* Clear floats after the columns */
+                .row::after {
+                    content: "";
+                    display: table;
+                    clear: both;
+                }
+                 /* Assumes this behaviour if screen is larger than 600px (Phone sized) */
+                @media screen and (max-width:600px) {
+                    .threecolumn {
+                    width: 100%;
+                    }
+                }
+                /* Need to impliment a feature that can impliment
+                CSS Website layout
+                Viewport
+                Gridview
+                Media Queries */
+         </style>
+    </head>
+    
+    <body>
+        
+        <!-- Title -->
+       <h1 class="center">My Fitness Tracker</h1>
+       <div class="row">
+            <div class="threecolumn">
+                
+                <tr>
+                    <form oninput=
+                    "CalBurn.value=(((parseFloat(m.value)/parseFloat(mps.value))/60)*3.8*parseFloat(kg.value))/200">
+                        <fieldset style="width: 100%;">
+                            <!-- Walking MET = 3.8 -->
+                            <!-- Calories = (Minutes * MET * Body weight) / 200 -->
+                            <!-- min = (parseInt(m.value)/parseInt(mps.value))/60 -->
+                            <!-- MET = 3.8 -->
+                            <!-- minutes = (m/mps)/60  -->
+                            <legend>Calories burnt:</legend>
+                            <label for="meters">How many meters did you walk:</label>
+                            <input type="number" id="m" name="m"><br><br>
+                            <label for="meters">How fast did you walk (mps):</label>
+                            <input type="number" id="mps" name="mps"><br><br>
+                            <label for="cm">Weight in kg:</label>
+                            <input type="number" id="kg" value="kg">
+                            =<output name="CalBurn" for="m mps kg"></output>
+                        </fieldset>
+                    </form>
+                </tr>
+                
+            </div>
+            
+            <div class="threecolumn">
+                <tr>
+                    <form action="/action_page.php">
+                        <fieldset style="width: 100%;">
+                            <legend>What did you eat today? (Put each input in a list seperated with commas):</legend>
+                            <label for="food">Food you ate today:</label>
+                            <input type="text" id="food" name="food"><br><br>
+                            
+                            <div id="submission">
+                                <input type="submit" name="submit" value="Submit">
+                            </div>`
+                        </fieldset>
+                    </form>
+                </tr>
+            </div>
+            <div class="threecolumn">
+                <tr>
+                    <!-- BMI by using weight in kilograms (kg) divided by the square of height in meters (m2). -->
+                    <form oninput="BMI.value=parseFloat(kg.value)/((parseInt(cm.value)*parseInt(cm.value))*100)">
+                        <fieldset style="width: 100%;">
+                            <legend>Overall Health (BMI):</legend>
+                            <label for="kg">Weight in kg:</label>
+                            <input type="text" id="kg" name="kg"><br><br>
+                            <label for="cm">Height in cm:</label>
+                            <input type="number" id="cm" value="cm">
+                            =<output name="BMI" for="kg cm"></output>
+                        </fieldset>
+                    </form>
+                    <!-- <div id="submission">
+                    <input type="submit" name="submit" value="Submit" onclick="<output name='x' for='a b'></output>">
+                    (calc(kg/(cm*cm)*100)))
+                    </div> -->
+                </tr>
+            </div>
+        </div>
+    </body>
+</html>
